@@ -61,6 +61,7 @@ def makeYqlQuery(req):
     l.append(state)
     l.append(country)
     query = " ".join(l)
+    print(query)
 
     return "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text='" + query + "')"
 
